@@ -1,13 +1,18 @@
 import React from "react"
 
-const SSRPage = ({ serverData }) => (
+/*
+  SSR basic instructions:
+  https://www.gatsbyjs.com/docs/how-to/rendering-options/using-server-side-rendering/
+*/
+
+const DogPage = ({ serverData }) => (
   <main>
-    <h1>SSR Page with Dogs</h1>
+    <h1>Dog Page fetching image with getServerData()</h1>
     <img alt="Happy dog" src={serverData.message} />
   </main>
 )
 
-export default SSRPage
+export default DogPage
 
 export async function getServerData() {
   try {

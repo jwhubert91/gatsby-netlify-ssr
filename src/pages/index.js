@@ -35,7 +35,7 @@ const IndexPage = () => {
             style={linkStyle}
             href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
           >
-            External route example
+            External link example
           </a>
         </li>
         <li style={listItemStyle}>
@@ -44,8 +44,8 @@ const IndexPage = () => {
           </a>
         </li>
         <li style={listItemStyle}>
-          <a style={linkStyle} href={`/ssr`}>
-            Server side rendered page example
+          <a style={linkStyle} href={`/dog`}>
+            Basic dog SSR page without a dynamic route
           </a>
         </li>
       </ul>
