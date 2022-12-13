@@ -5,14 +5,24 @@ import React from "react"
   https://www.gatsbyjs.com/docs/how-to/rendering-options/using-server-side-rendering/
 */
 
-const DogPage = ({ serverData }) => (
+const imageStyle = {
+  maxWidth: "80%",
+}
+
+const RandomDogPage = ({ serverData }) => (
   <main>
     <h1>Dog Page fetching image with getServerData()</h1>
+    <p>
+      API endpoint hit for image:{" "}
+      <a href="https://dog.ceo/api/breeds/image/random">
+        https://dog.ceo/api/breeds/image/random
+      </a>
+    </p>
     <img alt="Happy dog" src={serverData.message} />
   </main>
 )
 
-export default DogPage
+export default RandomDogPage
 
 export async function getServerData() {
   try {
