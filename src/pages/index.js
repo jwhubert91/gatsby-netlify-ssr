@@ -1,61 +1,62 @@
-import React, { useState, useEffect } from "react"
-import { Router, Link } from "@reach/router"
-import RandomDogPage from "./random"
-import NotFoundPage from "./404"
-import StaticPage from "./static"
-import BreedPage from "./dogs/[breed]"
+import React, { useState, useEffect } from "react";
+import { Link } from "gatsby";
+import { Router } from "@reach/router";
+import RandomDogPage from "./random";
+import NotFoundPage from "./404";
+import StaticPage from "./static";
+import BreedPage from "./dogs/[breed]";
 
 const pageStyles = {
   color: "#232129",
   padding: 36,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
+};
 const pageHeaderStyles = {
   marginTop: 0,
   marginBottom: 24,
-}
+};
 const linkStyle = {
   color: "#8954A8",
   fontWeight: "bold",
   fontSize: 16,
   verticalAlign: "5%",
-}
+};
 const listItemStyle = {
   marginTop: 10,
   marginBottom: 10,
-}
+};
 const docLink = {
   text: "Documentation",
   url: "https://www.gatsbyjs.com/docs/",
   color: "#8954A8",
-}
+};
 
 const IndexPage = () => {
   return (
-    <Router>
-      <Home path="/" />
-      <RandomDogPage path="/random" />
-      <StaticPage path="/static" />
-      <BreedPage path="/dogs/:breed" />
-      <NotFoundPage path="/*" />
-    </Router>
-  )
-}
+    //   <Router>
+    <Home path="/" />
+    //     <RandomDogPage path="/random" />
+    //     <StaticPage path="/static" />
+    //     <NotFoundPage path="/*" />
+    //     <BreedPage path="/dogs/:breed" />
+    //   </Router>
+  );
+};
 
 function Home() {
-  const [dogBreeds, setDogBreeds] = useState([])
+  const [dogBreeds, setDogBreeds] = useState([]);
 
   useEffect(() => {
     const getDoggos = async () => {
-      const res = await fetch(`https://dog.ceo/api/breeds/list/all`)
-      const doggos = await res.json()
+      const res = await fetch(`https://dog.ceo/api/breeds/list/all`);
+      const doggos = await res.json();
       if (!!doggos) {
-        const doggoStrings = Object.keys(doggos.message)
-        setDogBreeds(doggoStrings)
+        const doggoStrings = Object.keys(doggos.message);
+        setDogBreeds(doggoStrings);
       }
-    }
-    getDoggos()
-  }, [])
+    };
+    getDoggos();
+  }, []);
   return (
     <main style={pageStyles}>
       <h1 style={pageHeaderStyles}>Gatsby Netlify SSR Example</h1>
@@ -103,7 +104,7 @@ function Home() {
         <h4>No dogs are currently available (the fetch failed)</h4>
       )}
     </main>
-  )
+  );
 }
 
-export default IndexPage
+export default IndexPage;
