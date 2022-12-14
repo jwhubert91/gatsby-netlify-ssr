@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "@reach/router"
+import { Router, Link } from "@reach/router"
+import RandomDogPage from "./random"
+import NotFoundPage from "./404"
+import StaticPage from "./static"
+import BreedPage from "./dogs/[breed]"
 
 const pageStyles = {
   color: "#232129",
@@ -27,6 +31,18 @@ const docLink = {
 }
 
 const IndexPage = () => {
+  return (
+    <Router>
+      <Home path="/" />
+      <RandomDogPage path="/random" />
+      <StaticPage path="/static" />
+      <BreedPage path="/dogs/:breed" />
+      <NotFoundPage path="/*" />
+    </Router>
+  )
+}
+
+function Home() {
   const [dogBreeds, setDogBreeds] = useState([])
 
   useEffect(() => {
@@ -40,7 +56,6 @@ const IndexPage = () => {
     }
     getDoggos()
   }, [])
-
   return (
     <main style={pageStyles}>
       <h1 style={pageHeaderStyles}>Gatsby Netlify SSR Example</h1>
@@ -77,9 +92,9 @@ const IndexPage = () => {
           <ul>
             {dogBreeds.map((breed, idx) => (
               <li key={idx} style={listItemStyle}>
-                <a style={linkStyle} href={`/dogs/:${breed}`}>
+                <Link style={linkStyle} to={`/dogs/${breed}`}>
                   {breed}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -92,5 +107,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-export const Head = () => <title>Home Page</title>
