@@ -26,19 +26,19 @@ const docLink = {
 }
 
 const IndexPage = () => {
-  // const [dogBreeds, setDogBreeds] = useState([])
+  const [dogBreeds, setDogBreeds] = useState([])
 
-  // useEffect(() => {
-  //   const getDoggos = async () => {
-  //     const res = await fetch(`https://dog.ceo/api/breeds/list/all`)
-  //     const doggos = await res.json()
-  //     if (!!doggos) {
-  //       const doggoStrings = Object.keys(doggos.message)
-  //       setDogBreeds(doggoStrings)
-  //     }
-  //   }
-  //   getDoggos()
-  // }, [])
+  useEffect(() => {
+    const getDoggos = async () => {
+      const res = await fetch(`https://dog.ceo/api/breeds/list/all`)
+      const doggos = await res.json()
+      if (!!doggos) {
+        const doggoStrings = Object.keys(doggos.message)
+        setDogBreeds(doggoStrings)
+      }
+    }
+    getDoggos()
+  }, [])
 
   return (
     <main style={pageStyles}>
@@ -70,7 +70,7 @@ const IndexPage = () => {
           </a>
         </li>
       </ul>
-      {/* <h2>Available dog breeds using SSR with dynamic routes:</h2>
+      <h2>Available dog breeds using SSR with dynamic routes:</h2>
       {dogBreeds ? (
         <>
           <ul>
@@ -85,7 +85,7 @@ const IndexPage = () => {
         </>
       ) : (
         <h4>No dogs are currently available (the fetch failed)</h4>
-      )} */}
+      )}
     </main>
   )
 }
