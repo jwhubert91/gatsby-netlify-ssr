@@ -70,7 +70,7 @@ const IndexPage = () => {
           </a>
         </li>
       </ul>
-      <h2>Available dog breeds using SSR with dynamic routes:</h2>
+      {/* <h2>Available dog breeds using SSR with dynamic routes:</h2>
       {dogBreeds ? (
         <>
           <ul>
@@ -85,7 +85,7 @@ const IndexPage = () => {
         </>
       ) : (
         <h4>No dogs are currently available (the fetch failed)</h4>
-      )}
+      )} */}
     </main>
   )
 }
