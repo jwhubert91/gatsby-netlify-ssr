@@ -1,4 +1,5 @@
 import React from "react"
+import DogImage from "../components/DogImage"
 
 /*
   SSR basic instructions:
@@ -18,7 +19,7 @@ const RandomDogPage = ({ serverData }) => (
         https://dog.ceo/api/breeds/image/random
       </a>
     </p>
-    <img alt="Happy dog" src={serverData.message} />
+    <DogImage imageSrc={serverData.message} />
   </main>
 )
 

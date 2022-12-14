@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { Link } from "@reach/router"
 
 const pageStyles = {
   color: "#232129",
@@ -74,10 +75,10 @@ const IndexPage = () => {
       {dogBreeds ? (
         <>
           <ul>
-            {dogBreeds.map((dogBreed, idx) => (
+            {dogBreeds.map((breed, idx) => (
               <li key={idx} style={listItemStyle}>
-                <a style={linkStyle} href={`/`}>
-                  {dogBreed}
+                <a style={linkStyle} href={`/dogs/:${breed}`}>
+                  {breed}
                 </a>
               </li>
             ))}
