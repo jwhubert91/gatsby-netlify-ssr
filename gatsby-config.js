@@ -6,5 +6,5 @@ module.exports = {
     title: `gatsby-netlify-ssr`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [],
+  plugins: ["gatsby-plugin-netlify"],
 }
