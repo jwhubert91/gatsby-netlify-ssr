@@ -95,3 +95,34 @@ function Home() {
 }
 
 export default IndexPage
+
+/*
+
+package.json before deletion:
+
+{
+  "name": "gatsby-netlify-ssr",
+  "version": "1.0.0",
+  "private": true,
+  "description": "gatsby-netlify-ssr",
+  "author": "James Hubert",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^4.25.0",
+    "gatsby-cli": "^5.3.0",
+    "gatsby-plugin-netlify": "^5.1.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}
+
+*/
