@@ -6,6 +6,9 @@ module.exports = {
     title: `gatsby-netlify-ssr`,
     siteUrl: `https://www.yourdomain.tld`,
   },
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
